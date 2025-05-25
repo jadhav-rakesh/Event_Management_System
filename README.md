@@ -13,7 +13,7 @@ The system is designed with four core entities:
 - **Permissions**: Defines specific permissions (e.g., read, write, share).
 - **UserPermissions**: Links users to their permissions.
 
-![ERD](./erd.png)
+![ERD](./images/erd.png)
 
 ---
 
