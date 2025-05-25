@@ -37,7 +37,6 @@ The system is designed with four core entities:
 | Database    | PostgreSQL     |
 | Auth        | OAuth2 + JWT   |
 | ORM         | SQLAlchemy     |
-| Deployment  | Render / Railway / Docker |
 
 ---
 
@@ -105,13 +104,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 pip install -r requirements.txt
 ```
 
-### 4. Apply migrations
-
-```bash
-alembic upgrade head  # Or use SQLAlchemy to create tables directly
-```
-
-### 5. Run the app
+### 4. Run the app
 
 ```bash
 uvicorn main:app --reload
@@ -130,41 +123,6 @@ uvicorn main:app --reload
 | PUT    | /events/{id}           | Update an event             |
 | DELETE | /events/{id}           | Delete an event             |
 | POST   | /events/{id}/share     | Share event with a user     |
-
----
-
-## 🌐 Deployment (Render Example)
-
-1. Push to GitHub.
-2. Go to [Render](https://render.com/), create a new **Web Service**.
-3. Set:
-   - Build Command: `pip install -r requirements.txt`
-   - Start Command: `uvicorn main:app --host 0.0.0.0 --port 10000`
-4. Add environment variables from `.env`.
-5. Expose port `10000`.
-
----
-
-## 🔐 Security Tips
-
-- Use hashed passwords (via `bcrypt` or `passlib`)
-- Use JWT tokens for secure endpoints
-- Sanitize input for event sharing
-- Restrict update/delete access only to `owner_id`
-
----
-
-## 🧪 Testing
-
-```bash
-pytest
-```
-
-Include tests for:
-- Auth
-- Permissions
-- Event CRUD
-- Sharing logic
 
 ---
 
