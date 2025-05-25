@@ -126,6 +126,12 @@ uvicorn main:app --reload
 
 ---
 
+## OPENAPI UI
+
+![OPENAPI UI](./images/openapi_ui.png)
+
+---
+
 ## 📄 License
 
 MIT License. Feel free to fork and use.
